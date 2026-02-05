@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Iberostar Waves Mehari Djerba - Réservez vos vacances au complexe 4 étoiles face à la mer à Djerba">
+    <title>Iberostar Waves Mehari Djerba - Complexe Hôtelier 4 Étoiles</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-star"></i>
+                    <span>IBEROSTAR WAVES MEHARI DJERBA</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="rooms.html">Chambres</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="btn-login">Connexion</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Bienvenue au Waves Mehari Djerba</h1>
+            <p class="hero-subtitle">Votre paradis en bord de mer à Djerba</p>
+            <a href="rooms.html" class="btn-primary">Réserver Maintenant</a>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    <section class="quick-booking">
+        <div class="container">
+            <form class="booking-form" id="quickBookingForm">
+                <div class="form-group">
+                    <label for="checkin">Arrivée</label>
+                    <input type="date" id="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Départ</label>
+                    <input type="date" id="checkout" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Personnes</label>
+                    <select id="guests" required>
+                        <option value="1">1 Adulte</option>
+                        <option value="2" selected>2 Adultes</option>
+                        <option value="3">2 Adultes + 1 Enfant</option>
+                        <option value="4">2 Adultes + 2 Enfants</option>
+                        <option value="5">Famille</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-search">
+                    <i class="fas fa-search"></i> Vérifier Disponibilité
+                </button>
+            </form>
+        </div>
+    </section>
+    <section class="featured-rooms">
+        <div class="container">
+            <h2 class="section-title">Nos Chambres Face à la Mer</h2>
+            <p class="section-subtitle">Découvrez le confort et la vue panoramique</p>
+            
+            <div class="rooms-grid">
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" alt="Chambre Standard Vue Mer">
+                        <div class="room-badge">Populaire</div>
+                    </div>
+                    <div class="room-details">
+                        <h3>Chambre Standard Vue Mer</h3>
+                        <p>Une chambre confortable avec vue partielle sur la mer et balcon privé</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-user"></i> 2-3 Personnes</span>
+                            <span><i class="fas fa-bed"></i> Lits Twins ou Double</span>
+                            <span><i class="fas fa-wifi"></i> Wi-Fi Gratuit</span>
+                        </div>
+                        <div class="room-footer">
+                            <div class="price">
+                                <span class="from">À partir de</span>
+                                <span class="amount">120€</span>
+                                <span class="per-night">/nuit</span>
+                            </div>
+                            <a href="room-details.html?room=standard" class="btn-secondary">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800" alt="Suite Familiale">
+                        <div class="room-badge premium">Familial</div>
+                    </div>
+                    <div class="room-details">
+                        <h3>Suite Familiale</h3>
+                        <p>Spacieuse suite avec chambre séparée pour les enfants, vue mer panoramique</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-user"></i> 4-5 Personnes</span>
+                            <span><i class="fas fa-bed"></i> 2 Chambres Séparées</span>
+                            <span><i class="fas fa-bath"></i> Salle de Bain Familiale</span>
+                        </div>
+                        <div class="room-footer">
+                            <div class="price">
+                                <span class="from">À partir de</span>
+                                <span class="amount">220€</span>
+                                <span class="per-night">/nuit</span>
+                            </div>
+                            <a href="room-details.html?room=family" class="btn-secondary">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800" alt="Suite Premium Vue Mer">
+                        <div class="room-badge">Exclusif</div>
+                    </div>
+                    <div class="room-details">
+                        <h3>Suite Premium Vue Mer</h3>
+                        <p>Luxe absolu avec grand balcon, jacuzzi et service VIP</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-user"></i> 2 Personnes</span>
+                            <span><i class="fas fa-hot-tub"></i> Jacuzzi Privé</span>
+                            <span><i class="fas fa-concierge-bell"></i> Service VIP</span>
+                        </div>
+                        <div class="room-footer">
+                            <div class="price">
+                                <span class="from">À partir de</span>
+                                <span class="amount">350€</span>
+                                <span class="per-night">/nuit</span>
+                            </div>
+                            <a href="room-details.html?room=premium" class="btn-secondary">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="rooms.html" class="btn-outline">Voir Toutes les Chambres</a>
+            </div>
+        </div>
+    </section>
+    <section class="amenities">
+        <div class="container">
+            <h2 class="section-title">Nos Services</h2>
+            <p class="section-subtitle">Une expérience incomparable</p>
+            
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <i class="fas fa-spa"></i>
+                    <h3>Spa & Bien-être</h3>
+                    <p>Détendez-vous dans notre spa avec soins traditionnels</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Restaurants & Bars</h3>
+                    <p>4 restaurants et 3 bars pour toutes les envies</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fas fa-swimming-pool"></i>
+                    <h3>3 Piscines</h3>
+                    <p>Piscines extérieures chauffées et pataugeoire enfants</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fas fa-baby"></i>
+                    <h3>Club Enfants</h3>
+                    <p>Animation et activités spéciales pour les enfants</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Plage Privée</h3>
+                    <p>Accès direct à la plage de Sidi Mehrez</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Sports & Loisirs</h3>
+                    <p>Tennis, gym, sports nautiques et animations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Ce Que Disent Nos Clients</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Un séjour fantastique ! L'accueil est chaleureux, la nourriture excellente et la plage magnifique. Nos enfants ont adoré le club enfants. Nous reviendrons !"</p>
+                    <div class="testimonial-author">
+                        <strong>La famille Martin</strong>
+                        <span>Lyon, France</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Prêt pour des Vacances Inoubliables ?</h2>
+            <p>Réservez dès maintenant et profitez de 10% de réduction sur votre séjour</p>
+            <a href="rooms.html" class="btn-primary-large">Réserver Maintenant</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-star"></i>
+                        <span>IBEROSTAR WAVES MEHARI DJERBA</span>
+                    </div>
+                    <p>Un paradis en bord de mer à Djerba. Vivez une expérience de vacances incomparable.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="rooms.html">Chambres</a></li>
+                        <li><a href="experiences.html">Expériences</a></li>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Spa & Bien-être</a></li>
+                        <li><a href="#">Restaurants & Bars</a></li>
+                        <li><a href="#">Animation & Sports</a></li>
+                        <li><a href="#">Excursions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Zone Touristique Sidi Mehrez, Djerba 4116</li>
+                        <li><i class="fas fa-phone"></i> +216 75 650 000</li>
+                        <li><i class="fas fa-envelope"></i> waves.mehari.djerba@iberostar.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Iberostar Waves Mehari Djerba. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="#">Mentions Légales</a>
+                    <a href="#">Politique de Confidentialité</a>
+                    <a href="#">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

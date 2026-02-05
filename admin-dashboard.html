@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Iberostar Waves Mehari Djerba</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-star"></i>
+                <span>IBEROSTAR WAVES</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-section="dashboard">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Tableau de Bord</span>
+            </a>
+            <a href="#" class="nav-item" data-section="bookings">
+                <i class="fas fa-calendar-check"></i>
+                <span>Réservations</span>
+            </a>
+            <a href="#" class="nav-item" data-section="rooms">
+                <i class="fas fa-bed"></i>
+                <span>Chambres</span>
+            </a>
+            <a href="#" class="nav-item" data-section="guests">
+                <i class="fas fa-users"></i>
+                <span>Clients</span>
+            </a>
+            <a href="#" class="nav-item" data-section="analytics">
+                <i class="fas fa-chart-bar"></i>
+                <span>Analytiques</span>
+            </a>
+            <a href="#" class="nav-item" data-section="reviews">
+                <i class="fas fa-star"></i>
+                <span>Avis</span>
+            </a>
+            <a href="#" class="nav-item" data-section="settings">
+                <i class="fas fa-cog"></i>
+                <span>Paramètres</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="nav-item" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Déconnexion</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 id="pageTitle">Tableau de Bord</h1>
+            </div>
+            <div class="header-right">
+                <button class="header-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=0072b8&color=fff" alt="Admin">
+                    <span id="adminName">Admin Djerba</span>
+                </div>
+            </div>
+        </header>
+        <div class="admin-content">
+            <section id="dashboard" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>85</h3>
+                            <p>Réservations Actives</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>€42,750</h3>
+                            <p>Revenu ce Mois</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>92%</h3>
+                            <p>Taux d'Occupation</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>4.7</h3>
+                            <p>Note Moyenne</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Réservations Récentes</h3>
+                            <a href="#" class="btn-sm">Voir Tout</a>
+                        </div>
+                        <div class="recent-bookings">
+                            <div class="booking-item">
+                                <div class="booking-info">
+                                    <strong>Fatima Ben Ali</strong>
+                                    <span>Suite Familiale • 15-22 Mar</span>
+                                </div>
+                                <div class="booking-status">
+                                    <span class="booking-price">€1,750</span>
+                                    <span class="badge-success">Confirmé</span>
+                                </div>
+                            </div>
+                            <div class="booking-item">
+                                <div class="booking-info">
+                                    <strong>Jean Dubois</strong>
+                                    <span>Chambre Deluxe • 20-27 Mar</span>
+                                </div>
+                                <div class="booking-status">
+                                    <span class="booking-price">€1,260</span>
+                                    <span class="badge-warning">En Attente</span>
+                                </div>
+                            </div>
+                            <div class="booking-item">
+                                <div class="booking-info">
+                                    <strong>Maria Rodriguez</strong>
+                                    <span>Chambre Standard • 10-17 Mar</span>
+                                </div>
+                                <div class="booking-status">
+                                    <span class="booking-price">€840</span>
+                                    <span class="badge-success">Confirmé</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Disponibilité des Chambres</h3>
+                        </div>
+                        <div class="room-availability">
+                            <div class="availability-item">
+                                <span class="room-name">Chambres Standard (150)</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                                <span class="availability-text">135 occupées</span>
+                            </div>
+                            <div class="availability-item">
+                                <span class="room-name">Chambres Deluxe (100)</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                                <span class="availability-text">85 occupées</span>
+                            </div>
+                            <div class="availability-item">
+                                <span class="room-name">Suites Familiales (50)</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 95%"></div>
+                                </div>
+                                <span class="availability-text">47 occupées</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="bookings" class="content-section">
+                <div class="section-header">
+                    <h2>Gestion des Réservations</h2>
+                    <button class="btn-sm">
+                        <i class="fas fa-plus"></i> Nouvelle Réservation
+                    </button>
+                </div>
+
+                <div class="card">
+                    <div class="table-controls">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Rechercher une réservation...">
+                        </div>
+                        <select class="filter-select">
+                            <option>Tous les Statuts</option>
+                            <option>Confirmé</option>
+                            <option>En Attente</option>
+                            <option>Annulé</option>
+                            <option>Check-in</option>
+                            <option>Check-out</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Client</th>
+                                    <th>Chambre</th>
+                                    <th>Arrivée</th>
+                                    <th>Départ</th>
+                                    <th>Montant</th>
+                                    <th>Statut</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookingsTable">
+                                <tr>
+                                    <td>#DJ2024-001</td>
+                                    <td>Fatima Ben Ali</td>
+                                    <td>Suite Familiale 205</td>
+                                    <td>15/03/2024</td>
+                                    <td>22/03/2024</td>
+                                    <td>€1,750</td>
+                                    <td><span class="badge-success">Confirmé</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#DJ2024-002</td>
+                                    <td>Jean Dubois</td>
+                                    <td>Chambre Deluxe 112</td>
+                                    <td>20/03/2024</td>
+                                    <td>27/03/2024</td>
+                                    <td>€1,260</td>
+                                    <td><span class="badge-warning">En Attente</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-check"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#DJ2024-003</td>
+                                    <td>Maria Rodriguez</td>
+                                    <td>Chambre Standard 045</td>
+                                    <td>10/03/2024</td>
+                                    <td>17/03/2024</td>
+                                    <td>€840</td>
+                                    <td><span class="badge-success">Confirmé</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section id="rooms" class="content-section">
+                <div class="section-header">
+                    <h2>Gestion des Chambres</h2>
+                    <button class="btn-sm">
+                        <i class="fas fa-plus"></i> Ajouter Chambre
+                    </button>
+                </div>
+
+                <div class="rooms-admin-grid">
+                    <div class="room-admin-card">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400" alt="Chambre Standard">
+                        <div class="room-admin-content">
+                            <h3>Chambre Standard Vue Mer</h3>
+                            <p>Chambre 045 • 28m² • 2-3 personnes</p>
+                            <p><strong>120€</strong>/nuit</p>
+                            <div class="room-admin-actions">
+                                <button class="btn-sm"><i class="fas fa-edit"></i></button>
+                                <button class="btn-sm danger"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="room-admin-card">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400" alt="Chambre Deluxe">
+                        <div class="room-admin-content">
+                            <h3>Chambre Deluxe Vue Mer</h3>
+                            <p>Chambre 112 • 35m² • 2-3 personnes</p>
+                            <p><strong>180€</strong>/nuit</p>
+                            <div class="room-admin-actions">
+                                <button class="btn-sm"><i class="fas fa-edit"></i></button>
+                                <button class="btn-sm danger"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="room-admin-card">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400" alt="Suite Familiale">
+                        <div class="room-admin-content">
+                            <h3>Suite Familiale</h3>
+                            <p>Chambre 205 • 60m² • 4-5 personnes</p>
+                            <p><strong>250€</strong>/nuit</p>
+                            <div class="room-admin-actions">
+                                <button class="btn-sm"><i class="fas fa-edit"></i></button>
+                                <button class="btn-sm danger"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="room-admin-card">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400" alt="Suite Premium">
+                        <div class="room-admin-content">
+                            <h3>Suite Premium Vue Mer</h3>
+                            <p>Chambre 301 • 75m² • 2 personnes</p>
+                            <p><strong>350€</strong>/nuit</p>
+                            <div class="room-admin-actions">
+                                <button class="btn-sm"><i class="fas fa-edit"></i></button>
+                                <button class="btn-sm danger"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="guests" class="content-section">
+                <div class="section-header">
+                    <h2>Base de Données Clients</h2>
+                </div>
+
+                <div class="card">
+                    <div class="table-controls">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Rechercher un client...">
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Email</th>
+                                    <th>Téléphone</th>
+                                    <th>Nationalité</th>
+                                    <th>Réservations</th>
+                                    <th>Total Dépensé</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Fatima Ben Ali</td>
+                                    <td>fatima.benali@email.com</td>
+                                    <td>+216 98 123 456</td>
+                                    <td>Tunisie</td>
+                                    <td>3</td>
+                                    <td>€4,250</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jean Dubois</td>
+                                    <td>jean.dubois@email.com</td>
+                                    <td>+33 6 12 34 56 78</td>
+                                    <td>France</td>
+                                    <td>2</td>
+                                    <td>€2,100</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Maria Rodriguez</td>
+                                    <td>maria.rodriguez@email.com</td>
+                                    <td>+34 612 345 678</td>
+                                    <td>Espagne</td>
+                                    <td>1</td>
+                                    <td>€840</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section id="analytics" class="content-section">
+                <div class="section-header">
+                    <h2>Rapports et Analytiques</h2>
+                    <button class="btn-sm" onclick="exportReport('pdf')">
+                        <i class="fas fa-download"></i> Exporter PDF
+                    </button>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Revenu Mensuel</h3>
+                        <div class="stat-number">€42,750</div>
+                        <span style="color: #27ae60;">↑ 15% vs mois dernier</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Taux d'Occupation</h3>
+                        <div class="stat-number">92%</div>
+                        <span style="color: #27ae60;">↑ 8% vs mois dernier</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>RevPAR</h3>
+                        <div class="stat-number">€145</div>
+                        <span style="color: #27ae60;">↑ 12% vs mois dernier</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Durée Moyenne Séjour</h3>
+                        <div class="stat-number">7.2 nuits</div>
+                        <span style="color: #27ae60;">↑ 0.8 vs mois dernier</span>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-top: 30px;">
+                    <div class="card-header">
+                        <h3>Répartition des Nationalités (Mars 2024)</h3>
+                    </div>
+                    <div class="chart-container" style="padding: 20px;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                            <div>
+                                <strong>France: 45%</strong>
+                                <div class="progress-bar" style="margin: 10px 0;">
+                                    <div class="progress-fill" style="width: 45%; background: #3498db;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Allemagne: 25%</strong>
+                                <div class="progress-bar" style="margin: 10px 0;">
+                                    <div class="progress-fill" style="width: 25%; background: #2ecc71;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Espagne: 15%</strong>
+                                <div class="progress-bar" style="margin: 10px 0;">
+                                    <div class="progress-fill" style="width: 15%; background: #e74c3c;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Tunisie: 10%</strong>
+                                <div class="progress-bar" style="margin: 10px 0;">
+                                    <div class="progress-fill" style="width: 10%; background: #f39c12;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Autres: 5%</strong>
+                                <div class="progress-bar" style="margin: 10px 0;">
+                                    <div class="progress-fill" style="width: 5%; background: #9b59b6;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="reviews" class="content-section">
+                <div class="section-header">
+                    <h2>Gestion des Avis</h2>
+                </div>
+
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Client</th>
+                                    <th>Nationalité</th>
+                                    <th>Note</th>
+                                    <th>Commentaire</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sophie Martin</td>
+                                    <td>France</td>
+                                    <td><i class="fas fa-star" style="color: gold;"></i> 5.0</td>
+                                    <td>Séjour fantastique ! La plage est magnifique et le personnel très accueillant.</td>
+                                    <td>05/03/2024</td>
+                                    <td>
+                                        <button class="btn-sm">Approuver</button>
+                                        <button class="btn-sm danger">Rejeter</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Hans Müller</td>
+                                    <td>Allemagne</td>
+                                    <td><i class="fas fa-star" style="color: gold;"></i> 4.5</td>
+                                    <td>Excellent rapport qualité-prix. La nourriture était délicieuse et variée.</td>
+                                    <td>28/02/2024</td>
+                                    <td>
+                                        <button class="btn-sm">Approuver</button>
+                                        <button class="btn-sm danger">Rejeter</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ahmed Ben Salah</td>
+                                    <td>Tunisie</td>
+                                    <td><i class="fas fa-star" style="color: gold;"></i> 4.0</td>
+                                    <td>Parfait pour les familles. Les enfants ont adoré le club et les piscines.</td>
+                                    <td>20/02/2024</td>
+                                    <td>
+                                        <button class="btn-sm">Approuver</button>
+                                        <button class="btn-sm danger">Rejeter</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section id="settings" class="content-section">
+                <div class="section-header">
+                    <h2>Paramètres du Système</h2>
+                </div>
+
+                <div class="card" style="padding: 30px;">
+                    <h3>Configuration de l'Hôtel</h3>
+                    <form>
+                        <div class="form-group">
+                            <label>Nom de l'Hôtel</label>
+                            <input type="text" value="Iberostar Waves Mehari Djerba">
+                        </div>
+                        <div class="form-group">
+                            <label>Email de Contact</label>
+                            <input type="email" value="waves.mehari.djerba@iberostar.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Téléphone</label>
+                            <input type="tel" value="+216 75 650 000">
+                        </div>
+                        <div class="form-group">
+                            <label>Adresse</label>
+                            <input type="text" value="Zone Touristique Sidi Mehrez, Djerba 4116, Tunisie">
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre de Chambres</label>
+                            <input type="number" value="300">
+                        </div>
+                        <div class="form-group">
+                            <label>Taux de Taxe (%)</label>
+                            <input type="number" value="19">
+                        </div>
+                        <div class="form-group">
+                            <label>Devise</label>
+                            <select>
+                                <option value="EUR" selected>Euro (€)</option>
+                                <option value="TND">Dinar Tunisien (DT)</option>
+                                <option value="USD">Dollar US ($)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary">Enregistrer les Modifications</button>
+                    </form>
+                </div>
+                
+                <div class="card" style="margin-top: 30px; padding: 30px;">
+                    <h3>Paramètres de Saison</h3>
+                    <form>
+                        <div class="form-group">
+                            <label>Saison Actuelle</label>
+                            <select>
+                                <option value="high" selected>Haute Saison (Mars - Octobre)</option>
+                                <option value="low">Basse Saison (Novembre - Février)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Multiplicateur Haute Saison</label>
+                            <input type="number" value="1.3" step="0.1">
+                            <small>Ex: 1.3 = +30% par rapport au prix de base</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Multiplicateur Basse Saison</label>
+                            <input type="number" value="0.8" step="0.1">
+                            <small>Ex: 0.8 = -20% par rapport au prix de base</small>
+                        </div>
+                        <button type="submit" class="btn-primary">Mettre à jour les Prix</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+    
+   
+</body>
+</html>
