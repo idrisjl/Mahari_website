@@ -1,6 +1,3 @@
-/* ===========================
-   Admin Dashboard Styles
-   =========================== */
 
 .admin-body {
     display: flex;
@@ -8,9 +5,6 @@
     min-height: 100vh;
 }
 
-/* ===========================
-   Sidebar
-   =========================== */
 .admin-sidebar {
     width: 260px;
     background: var(--darker-bg);
@@ -171,10 +165,6 @@
     border-radius: 50%;
     border: 2px solid var(--primary-gold);
 }
-
-/* ===========================
-   Content Area
-   =========================== */
 .admin-content {
     padding: 30px;
 }
@@ -201,9 +191,6 @@
     color: var(--text-dark);
 }
 
-/* ===========================
-   Stats Cards
-   =========================== */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -254,10 +241,6 @@
     color: var(--text-gray);
     font-size: 14px;
 }
-
-/* ===========================
-   Dashboard Grid
-   =========================== */
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -285,9 +268,6 @@
     color: var(--text-dark);
 }
 
-/* ===========================
-   Bookings
-   =========================== */
 .recent-bookings {
     padding: 10px 0;
 }
@@ -332,10 +312,6 @@
     color: var(--primary-gold);
     font-size: 16px;
 }
-
-/* ===========================
-   Room Availability
-   =========================== */
 .room-availability {
     padding: 20px 24px;
 }
@@ -374,10 +350,6 @@
     font-size: 13px;
     color: var(--text-gray);
 }
-
-/* ===========================
-   Badges
-   =========================== */
 .badge-success {
     background: #d4edda;
     color: #155724;
@@ -476,10 +448,6 @@
 .data-table tbody tr:hover {
     background: var(--light-bg);
 }
-
-/* ===========================
-   Buttons
-   =========================== */
 .btn-sm {
     padding: 8px 16px;
     border: none;
@@ -521,10 +489,6 @@
 .btn-icon.danger:hover {
     color: #e74c3c;
 }
-
-/* ===========================
-   Rooms Admin Grid
-   =========================== */
 .rooms-admin-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -569,10 +533,6 @@
     display: flex;
     gap: 10px;
 }
-
-/* ===========================
-   Responsive Design
-   =========================== */
 @media (max-width: 1024px) {
     .admin-sidebar {
         width: 80px;
